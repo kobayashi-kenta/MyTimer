@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SettingViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,10 +49,43 @@
                     <navigationItem key="navigationItem" id="ETi-4y-x9M">
                         <barButtonItem key="rightBarButtonItem" title="秒数設定" id="6db-rq-cwW"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="hEl-7K-Tlz" kind="show" identifier="goSetting" id="7c0-6s-3ph"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="123.88392857142857"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Go4-zF-Gne">
+            <objects>
+                <viewController id="hEl-7K-Tlz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H4v-EV-rFB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VY-GY-DZZ">
+                                <rect key="frame" x="147" y="488" width="120" height="120"/>
+                                <state key="normal" image="btn_ decision"/>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYA-c0-YB1">
+                                <rect key="frame" x="0.0" y="88" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8ka-hF-iI4"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8VY-GY-DZZ" firstAttribute="centerY" secondItem="H4v-EV-rFB" secondAttribute="centerY" constant="100" id="1L0-KU-GbE"/>
+                            <constraint firstItem="8VY-GY-DZZ" firstAttribute="centerX" secondItem="H4v-EV-rFB" secondAttribute="centerX" id="LgK-1p-ifF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="q9M-D9-KtF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YF4-8s-NNI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1890" y="124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ROh-Eh-ji6">
@@ -75,6 +108,7 @@
     </scenes>
     <resources>
         <image name="bg" width="750" height="1334"/>
+        <image name="btn_ decision" width="120" height="120"/>
         <image name="btn_start" width="140" height="140"/>
         <image name="btn_stop" width="140" height="140"/>
         <systemColor name="systemBackgroundColor">

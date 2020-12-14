@@ -13,6 +13,7 @@
 		3779A0A92587312900E3D554 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3779A0A72587312900E3D554 /* Main.storyboard */; };
 		3779A0AB2587312D00E3D554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3779A0AA2587312D00E3D554 /* Assets.xcassets */; };
 		3779A0AE2587312D00E3D554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3779A0AC2587312D00E3D554 /* LaunchScreen.storyboard */; };
+		3779A0B72587372700E3D554 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3779A0B62587372700E3D554 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3779A0AA2587312D00E3D554 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3779A0AD2587312D00E3D554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3779A0AF2587312D00E3D554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3779A0B62587372700E3D554 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				3779A0A12587312900E3D554 /* AppDelegate.swift */,
 				3779A0A32587312900E3D554 /* SceneDelegate.swift */,
+				3779A0B62587372700E3D554 /* SettingViewController.swift */,
 				3779A0A52587312900E3D554 /* ViewController.swift */,
 				3779A0A72587312900E3D554 /* Main.storyboard */,
 				3779A0AA2587312D00E3D554 /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 				3779A0A62587312900E3D554 /* ViewController.swift in Sources */,
 				3779A0A22587312900E3D554 /* AppDelegate.swift in Sources */,
 				3779A0A42587312900E3D554 /* SceneDelegate.swift in Sources */,
+				3779A0B72587372700E3D554 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
