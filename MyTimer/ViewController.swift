@@ -37,12 +37,52 @@ class ViewController: UIViewController {
     
     
     @IBAction func startButtonAction(_ sender: Any) {
+        if let nowTimer = timer {
+            //　もしタイマーがスタート中だったらスタートしない
+            if nowTimer.isValid == true {
+                return
+            }
+        }
+        
+        //タイマーをスタート
+        timer = Timer.scheduledTimer(timeInterval: 1.0,
+                                     target: self,
+                                     selector: #selector(self.timerInterrupt(_:)),
+                                     userInfo: nil,
+                                     repeats: true)
     }
     
     
     @IBAction func stopButtonAction(_ sender: Any) {
     }
     
+    // 画面の更新をする
+    func displayUpdate() -> Int {
+    let settings = UserDefaults.standard
+    
+    // 取得した秒数をtimerValueに渡す
+    let timerValue = settings.integer(forKey: settingKey)
+    
+    // 残り時間を生成
+    let remainCount = timerValue - count
+    
+    // remainCountをラベルに表示
+    countDownLabel.text = "残り\(remainCount)秒"
+    
+    // 残り時間を戻り値に設定
+    return remainCount
+    }
+    
+    @objc func timerInterrupt(_ timer:Timer) {
+        
+        count += 1
+        
+        if displayUpdate() <= 0 {
+            count = 0
+            
+            timer.invalidate()
+        }
+    }
     
 }
 
