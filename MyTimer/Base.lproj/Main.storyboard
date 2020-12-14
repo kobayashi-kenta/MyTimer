@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Setting View Controller-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SettingViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,10 +29,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0w5-PT-zOp">
                                 <rect key="frame" x="57" y="478" width="140" height="140"/>
                                 <state key="normal" image="btn_start"/>
+                                <connections>
+                                    <action selector="startButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rc6-O2-gzT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xon-Iz-az7">
                                 <rect key="frame" x="217" y="478" width="140" height="140"/>
                                 <state key="normal" image="btn_stop"/>
+                                <connections>
+                                    <action selector="stopButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z9K-Wp-jxq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -47,9 +53,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ETi-4y-x9M">
-                        <barButtonItem key="rightBarButtonItem" title="秒数設定" id="6db-rq-cwW"/>
+                        <barButtonItem key="rightBarButtonItem" title="秒数設定" id="6db-rq-cwW">
+                            <connections>
+                                <action selector="settingButtonAction:" destination="BYZ-38-t0r" id="LTD-oz-Z3M"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="countDownLabel" destination="GA8-Ol-9Oc" id="Zoa-8e-T1q"/>
                         <segue destination="hEl-7K-Tlz" kind="show" identifier="goSetting" id="7c0-6s-3ph"/>
                     </connections>
                 </viewController>
@@ -57,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="123.88392857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="Go4-zF-Gne">
             <objects>
-                <viewController id="hEl-7K-Tlz" sceneMemberID="viewController">
+                <viewController id="hEl-7K-Tlz" customClass="SettingViewController" customModule="MyTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H4v-EV-rFB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,9 +79,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VY-GY-DZZ">
                                 <rect key="frame" x="147" y="488" width="120" height="120"/>
                                 <state key="normal" image="btn_ decision"/>
+                                <connections>
+                                    <action selector="decisionButtonAction:" destination="hEl-7K-Tlz" eventType="touchUpInside" id="dQe-7h-XVT"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYA-c0-YB1">
-                                <rect key="frame" x="0.0" y="88" width="414" height="216"/>
+                                <rect key="frame" x="1" y="89" width="414" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>
@@ -82,6 +96,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="q9M-D9-KtF"/>
+                    <connections>
+                        <outlet property="timerSettingPicker" destination="gYA-c0-YB1" id="5mM-QC-C1d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YF4-8s-NNI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
