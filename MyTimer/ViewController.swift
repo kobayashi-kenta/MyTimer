@@ -33,6 +33,15 @@ class ViewController: UIViewController {
     
     
     @IBAction func settingButtonAction(_ sender: Any) {
+        // timerをアンラップしてnowTimerに代入
+        if let nowTimer = timer {
+            //　もしタイマーが実行中だったら停止
+            if nowTimer.isValid == true {
+                // タイマー停止
+                nowTimer.invalidate()
+            }
+        }
+        performSegue(withIdentifier: "goSetting", sender: nil)
     }
     
     
@@ -54,6 +63,15 @@ class ViewController: UIViewController {
     
     
     @IBAction func stopButtonAction(_ sender: Any) {
+        // timerをアンラップしてnowtimerに代入
+        if let nowTimer = timer {
+            //　もしタイマーが実行中だったら停止
+            if nowTimer.isValid == true {
+                // タイマー停止
+                nowTimer.invalidate()
+            }
+        }
+        
     }
     
     // 画面の更新をする
@@ -83,6 +101,15 @@ class ViewController: UIViewController {
             timer.invalidate()
         }
     }
+    
+    // 画面の切り替えのタイミングで処理を行う
+    override func viewDidAppear(_ animated: Bool) {
+        // カウントをゼロにする
+        count = 0
+        // タイマーの表示を更新する
+        _ = displayUpdate()
+    }
+    
     
 }
 
